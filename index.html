@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+            .main{
+                width: 968px;
+                height: 812px;
+                margin: auto;
+                background-color: #fff;
+                /* padding: 50px; */
+                border-radius: 20px;
+            }
+            *{
+                font-family: "Poppins", sans-serif !important;
+                /* margin: 0; */
+            }
+            html{
+                background-color: #000;
+            }
+            .header-content{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                align-content: start;
+                /* margin-bottom: 20px; */
+                padding: 20px;
+            }
+            .header-text{
+                margin-right: auto;
+            }
+            .form-search {
+                width: 216px;
+                height: 38px;
+                position: relative;
+                /* width: 300px; */
+                /* margin: 0 auto; */
+                display: flex;
+
+            }
+            .form-search__input {
+                order: 3;
+                border: none;
+                outline:none;
+                border-bottom-right-radius: 10px;
+                border-top-right-radius: 10px;
+                background-color: #F9FBFF;
+            }
+            .form-search__submit {
+                order: 2;
+                border: none;
+                border-bottom-left-radius: 10px;
+                border-top-left-radius: 10px;
+                background-color: #F9FBFF;
+            }
+            .form-sort{
+                width: 154px;
+                height: 38px;
+                position: relative;
+                /* margin: 0 auto; */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #F9FBFF;
+            }
+            .form-sort__option{
+                line-height: 18px;
+                letter-spacing: -0.01em;
+                text-align: left;
+                color: #3D3C42;
+                background-color: #F9FBFF;
+                outline:none;
+                overflow: hidden;
+                border: none;
+            }
+            .form-text{
+                /* width: 50px; */
+                font-size: 12px;
+            }
+            .form-sort__select{
+                font-family: Poppins;
+                font-size: 12px;
+                font-weight: 900;
+                line-height: 18px;
+                letter-spacing: -0.01em;
+                text-align: left;
+                color: #3D3C42;
+                background-color: #F9FBFF;
+                overflow: hidden;
+                outline:none;
+                border: none;
+            }
+
+            .table-content{
+                width: 100%;
+            }
+            .main-head__info{
+                display: flex;
+                /* justify-content: space-evenly; */
+                border-bottom: 1px solid #B5B7C0;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .main-head__text{
+                font-family: "Poppins", sans-serif;
+                font-weight: 500;
+                font-style: normal;
+                font-size: 14px;
+                line-height: 21px;
+                letter-spacing: -0.01em;
+                color: #B5B7C0;
+            }
+            table {
+            border-collapse: collapse;
+            width: 100%;
+            }
+            th{
+                font-family: Poppins;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 21px;
+                letter-spacing: -0.01em;
+                text-align: left;
+                color: #B5B7C0;
+            }
+            td{
+                font-family: Poppins;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 21px;
+                letter-spacing: -0.01em;
+                text-align: left;
+                color: #292D32;
+            }
+            thead{
+                border-bottom: 1px solid #EEEEEE;
+            }
+
+            tr, th{
+                padding: 15px;
+            }
+            td{
+                border-bottom: 1px solid #EEEEEE;
+                padding: 15px;
+            }
+            tbody  {
+                /* border-bottom: 1px solid #EEEEEE; */
+                /* padding: 20px; */
+            }
+
+
+.footer-content-menu__navigation{
+    display: flex;
+}
+
+
+.footer-content-text__info{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color:  #B5B7C0;
+    /* padding-left: 15px; */
+}
+.button-arrow__right, .button-arrow__left, .button-namber__page, .button-dot, .button-namber__lastPage {
+    background-color: #F5F5F5;
+    width: 26px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+    color: #404B52;
+    font-size: 12px;
+    align-items: center;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.button-arrow__right:hover,
+.button-arrow__left:hover,
+.button-namber__lastPage:hover,
+.button-namber__page:hover,
+.button-dot:hover {
+    background-color: #5932EA;
+    cursor: pointer;
+    color: #FFF;
+}
+.hoverPage{
+    background-color: #5932EA;
+    color: #FFF;
+}
+
+
+.button-dot{
+    background-color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 12px;
+    letter-spacing: -0.01em;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: #FF3D00;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    display: flex;
+    margin: 0 auto;
+    }
+    
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+
+.text-focus-in {
+	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2024-4-17 14:54:3
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation text-focus-in
+ * ----------------------------------------
+ */
+ @-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+.dn{
+    display: none;
+}
+
+
+
+</style>
+</head>
+<body>
+    
+
+
+
+<div class="main">
+
+
+    <div class="header-content">
+        <h1 id="animateMe" class="header-text">
+            Все покупатели
+        </h1>
+        <form class="form-search">
+            <input class="form-search__input" type="text" placeholder="Поиск">
+            <button class="form-search__submit" type="submit">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#7E7E7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M21 21L16.65 16.65" stroke="#7E7E7E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </form>
+
+        <form class="form-sort">
+            <div class="form-text">
+                Sort by:
+            </div>
+            <select
+                name="sort"
+                class="form-sort__select"
+                >
+                    <option 
+                    class="form-sort__option"
+                    selected="selected"
+                    value="country">
+                    Страна
+                    </option>
+
+                    <option 
+                    class="form-sort__option"
+                    selected="selected"
+                    value="country">
+                    Статус
+                    </option>
+
+            </select>
+        </form>
+
+</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Имя</th>
+                        <th>Компания</th>
+                        <th>Номер телефона</th>
+                        <th>Email</th>
+                        <th>Страна</th>
+                        <th>Статус</th>
+                      </tr>
+                </thead>
+        <tbody id="tbody">
+            <tr>
+                <td colspan="6">
+                    <span class="loader"></span>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div class="footer-content dn">
+            <p class="footer-content-text__info">
+                Показаны данные с 1 по 3 из 256K записей
+            </p>
+            <div class="footer-content-menu__navigation">
+                <div class="button-arrow__right"><</div>
+
+                <div class="button-namber__page">1</div>
+                <div class="button-namber__page">2</div>
+                <div class="button-namber__page">3</div>
+                <div class="button-namber__page">4</div>
+                <div class="button-dot">...</div>
+                <div class="button-namber__lastPage">40</div>
+
+                <div class="button-arrow__left">></div>
+            </div>
+        </div>
+</div>
+</body>
+<script>
+
+
+document.addEventListener('DOMContentLoaded', function() {
+function seePages(one,json){
+    let dataHtml = ``;
+    // console.log(json);
+    for (let i = one; i < one + 8; i++) { 
+        // alert(json[i]);
+        dataHtml = dataHtml +
+        `<tr>
+                <td>${json[i].name.firstname} ${json[i].name.lastname}</td>
+                <td>${json[i].address.city}</td>
+                <td>${json[i].phone}</td>
+                <td>${json[i].email}</td>
+                <td>${json[i].address.street}</td>
+                <td>${json[i].address.number}</td>
+        </tr>`;
+    }
+    document.getElementById('animateMe').classList.add('text-focus-in');
+    document.querySelector('.footer-content').classList.remove('dn');
+    let elements = document.getElementById('tbody');
+    elements.innerHTML = dataHtml;
+}
+
+
+
+
+
+
+
+
+
+fetch('https://fakestoreapi.com/users')
+            .then(res=>res.json())
+            .then(json=>{
+                for (let i = 0; i < 10; i++) { 
+                    json.push(...json)
+                }
+                let lastPage = Math.floor(json.length / 8)
+                let startPage = 1;
+                let pageCount = 1;
+                seePages(startPage-1, json);
+
+
+
+
+
+                function seeNavtgation(count){
+                    // create number pages 4
+                    let pages = `<div class="button-arrow__left"><</div>`;
+                    for (let i = count - 1; i < count + 3; i++) { 
+                        if(count - 1== i){
+                            pages = pages + 
+                                `<div class="button-namber__page hoverPage">${i+1}</div>`;
+                        }
+                        else{
+                            pages = pages + 
+                                `<div class="button-namber__page">${i+1}</div>`;                  
+                        }
+
+                    }
+                    pages = pages + `<div class="button-dot">...</div>`;
+                    pages = pages + `<div class="button-namber__lastPage">${lastPage}</div>`;
+                    pages = pages + `<div class="button-arrow__right">></div>`;
+                    let elementPages = document.querySelector('.footer-content-menu__navigation');
+                    elementPages.innerHTML = pages;
+
+                    document.querySelectorAll('.button-namber__page').forEach((el,i)=>{
+                        el.addEventListener('click',(g)=>{
+                            pageCount = Number(el.innerHTML);
+                            // console.log(pageCount)
+                            // seeNavtgation();
+                            seeNavtgation(pageCount);
+                            seePages(pageCount+1, json)
+                        })
+                    })
+                    document.querySelector('.button-arrow__right').addEventListener('click',()=>{
+                        pageCount = pageCount + 1;
+                        if(pageCount >= lastPage){
+                            pageCount = lastPage;
+                        }
+                        seeNavtgation(pageCount);
+                        seePages(pageCount+1, json)
+                    })
+                    document.querySelector('.button-arrow__left').addEventListener('click',()=>{
+                        pageCount = pageCount - 1;
+                        if(pageCount <= 0){
+                            pageCount = 1;
+                        }
+                        seeNavtgation(pageCount);
+                        seePages(pageCount+1, json)
+                    })
+                }
+                seeNavtgation(pageCount);
+
+
+
+
+
+                document.querySelectorAll('.button-namber__page').forEach((el,i)=>{
+                        el.addEventListener('click',(g)=>{
+                            pageCount = Number(el.innerHTML);
+                            seeNavtgation(pageCount);
+                            seePages(pageCount+1, json)
+                        })
+                    })
+                    document.querySelector('.button-arrow__right').addEventListener('click',()=>{
+                        pageCount = pageCount + 1;
+                        if(pageCount >= lastPage){
+                            pageCount = lastPage;
+                        }
+                        seeNavtgation(pageCount);
+                        seePages(pageCount+1, json)
+                    })
+                    document.querySelector('.button-arrow__left').addEventListener('click',()=>{
+                        pageCount = pageCount - 1;
+                        if(pageCount <= 0){
+                            pageCount = 1;
+                        }
+                        seeNavtgation(pageCount);
+                        seePages(pageCount+1, json)
+                    })
+
+
+
+
+
+
+                document.querySelectorAll('.button-namber__lastPage').forEach((el,i)=>{
+                    el.addEventListener('click',()=>{
+                        console.log(lastPage)
+                    })
+                })
+
+
+
+
+
+
+
+
+            }
+            )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}, false);
+</script>
+
+
+</html>
